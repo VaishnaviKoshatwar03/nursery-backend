@@ -1,4 +1,4 @@
-const express = require("express");
+3const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 require("dotenv").config();
@@ -25,5 +25,8 @@ const productRoutes = require("./routes/productRoutes");
 app.use("/api", productRoutes);
 
 // server
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+const PORT = process.env.PORT;
+
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server running on port ${PORT}`);
+});
